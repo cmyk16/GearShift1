@@ -9,10 +9,10 @@ int downOut =11;
 int Inputvalup = 0;       // variable to store the read value
 int Inputvaldown = 0;       // variable to store the read value
 
-int uptime =250;
+int uptime =1000;
 int upcount =0;
 
-int downtime =250;
+int downtime =1000;
 int downcount =0;
 
 bool upReq =false;
@@ -52,12 +52,12 @@ void loop()
 
   if(upReq){
     if(upcount<uptime){
-      digitalWrite(upOut, LOW);    //open valve
+      digitalWrite(upOut, 1);    //open valve
       Serial.println("up 1 ");
     
     }else{
 
-      digitalWrite(upOut, HIGH);    //open valve
+      digitalWrite(upOut, 0);    //open valve
       Serial.println("up 0 ");
       upReq =false;
       upcount=0;
@@ -68,12 +68,12 @@ void loop()
 
   if(downReq){
     if(downcount<downtime){
-      digitalWrite(downOut, LOW);    //open valve
+      digitalWrite(downOut, 1);    //open valve
       Serial.println("down 1");
     
     }else{
 
-      digitalWrite(downOut, HIGH);    //open valve
+      digitalWrite(downOut, 0);    //open valve
       Serial.println("down 0");
       downReq =false;
       downcount=0;
